@@ -6,6 +6,10 @@ logger = logging.getLogger(__name__)
 
 app = FastAPI(title="DevOps Skill-UP API")
 
+@app.get("/")
+def read_root():
+    return {"message": "FastAPI AWS Project is running!"}
+
 @app.get("/health")
 def health_check():
     logger.info("Health check endpoint hit")
